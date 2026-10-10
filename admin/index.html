@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Admin dashboard | CozyCart</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="site-header"><a class="brand" href="../index.html">cozy<span>cart.</span></a>
+        <nav><a href="../index.html">View store</a></nav>
+        <div id="account-actions"></div>
+    </header>
+    <main class="container page-content">
+        <p class="eyebrow">STORE CONTROL</p>
+        <h1>Admin dashboard</h1>
+        <div class="admin-tabs"><button class="tab active" data-tab="products">Products</button><button class="tab"
+                data-tab="categories">Categories</button><button class="tab" data-tab="orders">Orders</button><button
+                class="tab" data-tab="admins">Add admin</button></div>
+        <section id="admin-products" class="admin-panel">
+            <div class="section-heading">
+                <h2>Manage products</h2><button id="new-product-btn" class="btn btn-dark">+ Add product</button>
+            </div>
+            <form id="product-form" class="admin-form hidden" novalidate>
+                <h3 id="product-form-title">Add product</h3><input type="hidden" name="id">
+                <div class="form-grid"><label>Product name<input name="name" required minlength="2"
+                            maxlength="80"></label><label>Category<select name="categoryId"
+                            required></select></label><label>Price (EGP)<input name="price" type="number" min="0.01"
+                            step="0.01" required></label><label>Stock quantity<input name="stock" type="number" min="0"
+                            step="1" required></label><label>Image URL<input name="image" type="url"
+                            placeholder="https://..." required></label><label class="wide">Description<textarea
+                            name="description" required minlength="10" maxlength="500"></textarea></label></div>
+                <p class="form-error" id="product-error"></p><button class="btn btn-dark" type="submit">Save
+                    product</button> <button class="btn btn-light" id="cancel-product" type="button">Cancel</button>
+            </form>
+            <div id="admin-product-list" class="table-wrap"></div>
+        </section>
+        <section id="admin-categories" class="admin-panel hidden">
+            <h2>Manage categories</h2>
+            <form id="category-form" class="inline-form"><label>Category name<input name="name" required minlength="2"
+                        maxlength="40"></label><button class="btn btn-dark" type="submit">Add category</button></form>
+            <p id="category-error" class="form-error"></p>
+            <div id="admin-category-list" class="table-wrap"></div>
+        </section>
+        <section id="admin-orders" class="admin-panel hidden">
+            <h2>Customer orders</h2>
+            <div id="admin-order-list" class="table-wrap"></div>
+        </section>
+        <section id="admin-admins" class="admin-panel hidden">
+            <h2>Create another admin</h2>
+            <form id="admin-form" class="admin-form" novalidate>
+                <div class="form-grid"><label>Full name<input name="name" required minlength="2"
+                            maxlength="60"></label><label>Email<input name="email" type="email"
+                            required></label><label>Password<input name="password" type="password" required
+                            minlength="8"></label><label>Confirm password<input name="confirmPassword" type="password"
+                            required></label></div>
+                <p id="admin-error" class="form-error"></p><button class="btn btn-dark" type="submit">Create
+                    admin</button>
+            </form>
+        </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script src="../js/storage.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My orders | CozyCart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header"><a class="brand" href="index.html">cozy<span>cart.</span></a>
+        <nav><a href="index.html">Shop</a><a href="cart.html">Cart</a></nav>
+        <div id="account-actions"></div>
+    </header>
+    <main class="container page-content">
+        <p class="eyebrow">YOUR PURCHASES</p>
+        <h1>Order history</h1>
+        <div id="orders-list"></div>
+        <p id="orders-empty" class="empty hidden">You haven't placed any orders yet.</p>
+    </main>
+   <script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/store.js"></script>
+    <script>Store.renderMyOrders();</script>
+</body>
+
+</html>

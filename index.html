@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CozyCart | Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">cozy<span>cart.</span></a>
+    <nav><a href="index.html">Shop</a><a href="index.html#categories">Categories</a><a href="wishlist.html">Wishlist
+        <span id="wish-count" class="count">0</span></a><a href="cart.html">Cart <span id="cart-count"
+          class="count">0</span></a></nav>
+    <div class="header-actions" id="account-actions"></div>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">A LITTLE JOY, DELIVERED</p>
+        <h1>Find your new<br><span>favorite things.</span></h1>
+        <p class="hero-copy">Thoughtfully picked essentials for your everyday life.</p><a class="btn btn-dark"
+          href="#products">Explore products</a>
+      </div>
+      <div class="hero-art">
+        <div class="art-circle"></div>
+        <div class="art-card">✦<br><small>GOOD<br>THINGS</small></div><span class="sparkle sparkle-one">✧</span><span
+          class="sparkle sparkle-two">✦</span>
+      </div>
+    </section>
+    <section id="categories" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE</p>
+          <h2>Shop by category</h2>
+        </div>
+      </div>
+      <div id="category-chips" class="chips"></div>
+    </section>
+    <section id="products" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE COLLECTION</p>
+          <h2>Made for your everyday</h2>
+        </div><span id="result-count" class="muted"></span>
+      </div>
+      <div class="filters"><input id="search" type="search" placeholder="Search products..."><select
+          id="category-filter">
+          <option value="">All categories</option>
+        </select><select id="sort">
+          <option value="featured">Sort: Featured</option>
+          <option value="price-low">Price: Low to high</option>
+          <option value="price-high">Price: High to low</option>
+          <option value="name">Name: A–Z</option>
+        </select></div>
+      <div id="product-grid" class="product-grid"></div>
+      <p id="empty-state" class="empty hidden">No products match your filters.</p>
+    </section>
+  </main>
+  <footer><a class="brand" href="index.html">cozy<span>cart.</span></a>
+    <p>Simple finds. Everyday comfort.</p><small>Demo project · Local Storage</small>
+  </footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/store.js"></script>
+</body>
+
+</html>

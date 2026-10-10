@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login | CozyCart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page"><a class="brand auth-brand" href="index.html">cozy<span>cart.</span></a>
+    <main class="auth-card">
+        <p class="eyebrow">WELCOME BACK</p>
+        <h1>Login to your account</h1>
+        <p class="muted">Pick up where you left off.</p>
+        <form id="login-form" novalidate><label>Email<input type="email" name="email" autocomplete="email"
+                    required></label><small class="field-error" data-error="email"></small><label>Password<input
+                    type="password" name="password" autocomplete="current-password" required></label><small
+                class="field-error" data-error="password"></small>
+            <p id="form-error" class="form-error"></p><button class="btn btn-dark full" type="submit">Login</button>
+        </form>
+        <p class="auth-switch">New here? <a href="register.html">Create an account</a></p>
+        <div class="demo-note"><strong>Demo admin</strong><br>admin@cozycart.com / Admin123!</div>
+    </main>
+    <script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/api.js"></script>
+<script src="js/store.js"></script>
+    <script>Auth.initLogin();</script>
+</body>
+
+</html>
